@@ -1,0 +1,20 @@
+-# in app/views/games/show.html.haml
+
+%h2 Details about #{@games.title}
+
+%ul#details
+  %li
+    Rating:
+    = @games.rating
+  %li
+    Released on:
+    = @games.release_data.strftime("%B %d, %Y")
+  %ll
+    Game System:
+    = @games.system
+
+%h3 Description:
+
+%p#description= @games.description
+
+= link_to 'Back to games list', games_path

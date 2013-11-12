@@ -2,19 +2,18 @@
 %h2 All Games
 
 %table#games
-%thead
-%tr
-%th Game Title
-%th Rating
-%th Release Date
-%th System
-%th More Info
-%tbody
--@games.each do |games|
-%tr
-%td= game.title
-%td= game.rating
-%td= game.release_date
-%td= game.system
-%td= link_to "More about #{game.title}", game_path
-(game)
+  %thead
+    %tr
+      %th Game Title
+      %th Rating
+      %th Release Date
+      %th System
+      %th More Info
+  %tbody
+    - @games.each do |games|
+      %tr
+        %td= games.title
+        %td= games.rating
+        %td= games.release_date
+        %td= games.system
+        %td= link_to "More about #{games.title}", games_path(games)
