@@ -10,6 +10,7 @@
       %th Release Date
       %th Genre
       %th System
+
       %th Details
   %tbody
     - @games.each do |games|
@@ -19,6 +20,7 @@
         %td= games.release_date
         %td= games.genre
         %td= games.system
+        %td= games.more_info
         %td= link_to "More about #{games.title}", games
         %td= link_to 'Add new games', new_game_path
         %td= link_to 'Edit games', edit_game_path(games)

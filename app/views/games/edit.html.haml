@@ -1,17 +1,24 @@
 %h2 Edit Game
 
-= form_tag games_path, :method => :put do
+= form_tag game_path(@games), :method => :put do
 
   = label :game, :title, 'Title'
   = text_field :game, :title
 
-  =label :game, :rating, 'Rating'
-  =select :movie, :rating, ['E', 'T', 'M']
+  = label :game, :rating, 'Rating'
+  = select :game, :rating, ['E', 'T', 'M']
 
   = label :game, :release_date, 'Released On'
-  = date_select :game, :release_date
+  = text_field :game, :release_date
+
+  = label :game, :genre, 'Genre'
+  = text_field :game, :genre
 
   = label :game, :system, 'System'
   = text_field :game, :system
 
-  = submit_tag 'Save Changes'
+  = label :game, :more_info, 'Details About Game'
+  = text_field :game, :more_info
+
+  = submit_tag 'Update Game Info'
+

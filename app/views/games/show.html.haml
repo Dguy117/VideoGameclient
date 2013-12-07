@@ -8,14 +8,20 @@
     = @games.rating
   %li
     Released on:
-    = @games.release_data.strftime("%B %d, %Y")
-  %ll
+    = @games.release_date
+  %li
+    Genre:
+    = @games.genre
+  %li
     Game System:
     = @games.system
 
-%h3 Description:
+%h3 More Info:
+%ul#details
+  %li
+    #{@games.more_info}
 
-%p#description= @games.description
-
-= link_to 'Edit info' , edit_games_path(@games)
+= link_to 'New Game' , new_game_path
+= link_to 'Edit info' , edit_game_path(@games)
 = link_to 'Back to games list', games_path
+= button_to 'Delete', game_path(@games), :method => :delete, :confirm => 'Are you sure?'

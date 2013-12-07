@@ -4,8 +4,9 @@ class CreateGames < ActiveRecord::Migration
       t.string 'title'
       t.string 'rating'
       t.string 'system'
-      t.text 'description'
-      t.datetime 'release_date'
+      t.string 'genre'
+      t.string 'more_info'
+      t.string 'release_date'
       # Add fields that let Rails automatically keep track
       # of when games are added or modified:
       t.timestamps

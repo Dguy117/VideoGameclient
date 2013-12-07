@@ -16,8 +16,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -30,8 +28,9 @@ gem 'jquery-rails'
 #rails footnotes i like it
 
 gem 'rails-footnotes', '>=3.7.9', :group => :development
-gem 'simple_form'
-gem 'bootstrap-sass', '~> 2.3.1.0' 
+gem 'jquery-rails'
+gem 'rails-footnotes', '>= 3.7.9', :group => :development
+gem 'bootstrap-sass, '~> 2.3.1.0' 
 
 
 # use Haml for templates

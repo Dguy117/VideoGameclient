@@ -1,8 +1,16 @@
 VideoGameclient::Application.routes.draw do
 
+  put 'games/:id' => 'games#update', :as => 'update_games'
+  get "games/new"
 
     resources :games
     root :to => redirect('/games')
+
+  get "users/new"
+
+    resources :games
+    root :to => redirect('/games')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

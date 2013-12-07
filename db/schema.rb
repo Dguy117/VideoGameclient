@@ -11,14 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028200538) do
+ActiveRecord::Schema.define(:version => 20131205220346) do
 
   create_table "games", :force => true do |t|
     t.string   "title"
     t.string   "rating"
     t.string   "system"
-    t.text     "description"
     t.datetime "release_date"
+    t.string   "genre"
+    t.string   "more_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

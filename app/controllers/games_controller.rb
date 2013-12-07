@@ -2,33 +2,40 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-    end
+  end
 
   def new
     # default: render 'new' template
-    end
+  end
 
   def create
     @games = Game.create!(params[:game])
-    flash[:notice] = "#{games.title} was successfully created."
+    flash[:notice] = "#{@games.title} was successfully created."
     redirect_to games_path
-    end
+  end
 
   def edit
     @games = Game.find params[:id]
-    end
+  end
 
   def update
     @games = Game.find params[:id]
     @games.update_attributes!(params[:game])
     flash[:notice] = "#{@games.title} was successfully updated."
-         redirect_to games_path(@games)
-    end
+    redirect_to games_path(@games)
+  end
 
   def show
     id = params[:id] # retrieve games ID from URI route
     @games = Game.find(id) # look up game by unique ID
     # will render app/views/movies/show.html.haml by default
-    end
-
   end
+
+  def destroy
+    @games = Game.find(params[:id])
+    @games.destroy
+    flash[:notice] = "Game '#{@games.title}' deleted."
+    redirect_to games_path
+  end
+
+end
